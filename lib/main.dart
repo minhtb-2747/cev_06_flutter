@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cev06_login_form/screens/login_screen.dart';
+import 'package:cev06_flutter/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
           child: ElevatedButton(
-          child: const Text('Go to page login'),
+          child: const Text('Lesson 1'),
           onPressed: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (builder) => const LoginScreen()));

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
-import 'package:cev06_login_form/screens/sign_up_screen.dart';
+import 'package:cev06_flutter/screens/sign_up_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
