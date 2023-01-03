@@ -1,8 +1,16 @@
+import 'package:cev06_flutter/provider/movies_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:cev06_flutter/screens/login_screen.dart';
-
+import 'package:cev06_flutter/screens/list_movies.dart';
+import 'package:provider/provider.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => MoviesProvider()),
+        ],
+        child: const MyApp(),
+      ));
 }
 
 class MyApp extends StatelessWidget {
@@ -64,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -79,13 +88,26 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: ElevatedButton(
-          child: const Text('Lesson 1'),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (builder) => const LoginScreen()));
-          },
-      )),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                child: const Text('Lesson 1'),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (builder) => const LoginScreen()));
+                },
+              ),
+              SizedBox(height: size.height * 0.02),
+              ElevatedButton(
+                child: const Text('Lesson 2'),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (builder) => const ListMoviesScreen()));
+                },
+              ),
+            ],
+          )),
     );
 
   }
