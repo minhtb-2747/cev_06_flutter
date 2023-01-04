@@ -1,3 +1,4 @@
+import 'package:cev06_flutter/provider/movie_detail_provider.dart';
 import 'package:cev06_flutter/provider/movies_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:cev06_flutter/screens/login_screen.dart';
@@ -8,6 +9,7 @@ void main() {
       MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => MoviesProvider()),
+          ChangeNotifierProvider(create: (context)=> MovieDetailProvider())
         ],
         child: const MyApp(),
       ));

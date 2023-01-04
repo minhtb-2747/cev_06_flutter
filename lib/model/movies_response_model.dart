@@ -1,7 +1,4 @@
-import 'package:cev06_flutter/model/movie_model.dart';
-
-
-class Movies {
+class MoviesResponseDetail {
   final int id;
   final String poster_path;
   final String overview;
@@ -9,7 +6,7 @@ class Movies {
   final String backdrop_path;
   final String release_date;
 
-  const Movies({
+  const MoviesResponseDetail({
     required this.overview,
     required this.poster_path,
     required this.id,
@@ -18,8 +15,8 @@ class Movies {
     required this.release_date,
   });
 
-  factory Movies.fromJson(Map<String, dynamic> json) {
-    return Movies(
+  factory MoviesResponseDetail.fromJson(Map<String, dynamic> json) {
+    return MoviesResponseDetail(
       overview: json['overview'] as String,
       poster_path: json['poster_path'] as String,
       id: json['id'] as int,
@@ -27,5 +24,20 @@ class Movies {
       backdrop_path: json['backdrop_path'] as String,
       release_date: json['release_date'] as String,
     );
+  }
+}
+
+class MoviesResponse {
+  final int page;
+  final List<MoviesResponseDetail> results;
+
+  const MoviesResponse({
+    required this.page,
+    required this.results,
+  });
+
+  factory MoviesResponse.fromJson(Map<String, dynamic> json) {
+    return MoviesResponse(
+        page: json['id'] as int, results: json['results'] as List<MoviesResponseDetail>);
   }
 }
