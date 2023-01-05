@@ -2,33 +2,35 @@ import 'package:cev06_flutter/model/genres_model.dart';
 
 class MovieInfoResponse {
   final int id;
-  final String poster_path;
+  final String posterPath;
   final String overview;
-  final String original_title;
-  final String backdrop_path;
-  final String release_date;
+  final String originalTitle;
+  final String backdropPath;
+  final String releaseDate;
   final List<GenresDetail> genres;
+  final double voteAverage;
 
-  const MovieInfoResponse({
-    required this.overview,
-    required this.poster_path,
-    required this.id,
-    required this.original_title,
-    required this.backdrop_path,
-    required this.release_date,
-    required this.genres,
-  });
+  const MovieInfoResponse(
+      {required this.overview,
+      required this.posterPath,
+      required this.id,
+      required this.originalTitle,
+      required this.backdropPath,
+      required this.releaseDate,
+      required this.genres,
+      required this.voteAverage});
 
   factory MovieInfoResponse.fromJson(Map<String, dynamic> json) {
     return MovieInfoResponse(
         overview: json['overview'] as String,
-        poster_path: json['poster_path'] as String,
+        posterPath: json['poster_path'] as String,
         id: json['id'] as int,
-        original_title: json['original_title'] as String,
-        backdrop_path: json['backdrop_path'] as String,
-        release_date: json['release_date'] as String,
+        originalTitle: json['original_title'] as String,
+        backdropPath: json['backdrop_path'] as String,
+        releaseDate: json['release_date'] as String,
         genres: (json['genres'] as List)
             .map((e) => GenresDetail.fromJson(e))
-            .toList());
+            .toList(),
+        voteAverage: json['vote_average']);
   }
 }
