@@ -6,12 +6,13 @@ class MovieDetailProvider extends ChangeNotifier {
   final _movieService = MovieService();
   MovieInfoResponse _movieDetail = const MovieInfoResponse(
       overview: '',
-      poster_path: '',
+      posterPath: '',
       id: 0,
-      original_title: '',
-      backdrop_path: '',
-      release_date: '',
-      genres: []);
+      originalTitle: '',
+      backdropPath: '',
+      releaseDate: '',
+      genres: [],
+      voteAverage: 0);
 
   MovieInfoResponse get movieDetailInfo => _movieDetail;
   bool isLoading = true;

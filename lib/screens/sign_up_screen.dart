@@ -1,3 +1,4 @@
+import 'package:cev06_flutter/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  child: Image.asset('assets/images/connexion.png',
+                  child: Image.asset(Assets.images.connexion.path,
                       height: 130,
                       width: 130,
                       // color: Color.fromARGB(255, 15, 147, 59),
@@ -82,7 +83,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           decoration: const BoxDecoration(
                               border: Border(
                                   right: BorderSide(color: Colors.deepOrange))),
-                          child: Image.asset('assets/images/ic_fb.png',
+                          child: Image.asset(Assets.images.icFb.path,
                               height: 35,
                               width: 35,
                               // color: Color.fromARGB(255, 15, 147, 59),
@@ -115,7 +116,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           decoration: const BoxDecoration(
                               border: Border(
                                   right: BorderSide(color: Colors.deepOrange))),
-                          child: Image.asset('assets/images/ic_tw.png',
+                          child: Image.asset(Assets.images.icTw.path,
                               width: 35,
                               height: 35,
                               // color: Colors.pink[800],

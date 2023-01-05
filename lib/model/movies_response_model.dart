@@ -1,22 +1,22 @@
 class MoviesResponseDetail {
   final int id;
-  final String poster_path;
+  final String posterPath;
   final String overview;
-  final String original_title;
+  final String originalTitle;
 
   const MoviesResponseDetail({
     required this.overview,
-    required this.poster_path,
+    required this.posterPath,
     required this.id,
-    required this.original_title,
+    required this.originalTitle,
   });
 
   factory MoviesResponseDetail.fromJson(Map<String, dynamic> json) {
     return MoviesResponseDetail(
       overview: json['overview'] as String,
-      poster_path: json['poster_path'] as String,
+      posterPath: json['poster_path'] as String,
       id: json['id'] as int,
-      original_title: json['original_title'] as String,
+      originalTitle: json['original_title'] as String,
     );
   }
 }

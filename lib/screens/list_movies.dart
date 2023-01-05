@@ -70,7 +70,7 @@ class _ListMoviesScreenState extends State<ListMoviesScreen> {
                       ));
                     } else {
                       final movie = movies[index];
-                      final image = movie.poster_path;
+                      final image = movie.posterPath;
                       return GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -100,7 +100,7 @@ class _ListMoviesScreenState extends State<ListMoviesScreen> {
                                       right: paddingBox),
                                   width: width,
                                   child: Text(
-                                    movie.original_title,
+                                    movie.originalTitle,
                                     style: const TextStyle(
                                         fontSize: 20,
                                         color: Colors.black,

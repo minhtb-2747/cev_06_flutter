@@ -1,4 +1,5 @@
 import 'package:cev06_flutter/constant/constants.dart';
+import 'package:cev06_flutter/gen/assets.gen.dart';
 import 'package:cev06_flutter/model/genres_model.dart';
 import 'package:cev06_flutter/provider/movie_detail_provider.dart';
 import 'package:flutter/material.dart';
@@ -48,10 +49,12 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
       body: Consumer<MovieDetailProvider>(
         builder: (context, value, child) {
           final movie = value.movieDetailInfo;
-          final image = movie.backdrop_path, releaseDate = movie.release_date;
-          final posterImage = movie.poster_path;
+          final image = movie.backdropPath, releaseDate = movie.releaseDate;
+          final posterImage = movie.posterPath;
           final overview = movie.overview;
           final genresString = getMovieGenres(movie.genres);
+          String voteAverage =
+              double.parse((movie.voteAverage).toStringAsFixed(1)).toString();
           return value.isLoading
               ? const Center(
                   child: Center(
@@ -101,7 +104,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                           margin: const EdgeInsets.only(top: 5),
                           padding: const EdgeInsets.only(left: 10, top: 10),
                           child: Text(
-                            movie.original_title,
+                            movie.originalTitle,
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16),
                             overflow: TextOverflow.ellipsis,
@@ -115,12 +118,12 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                             animation: true,
                             animationDuration: 1000,
                             lineWidth: 4,
-                            percent: 0.65,
+                            percent: movie.voteAverage / 10,
                             progressColor: Colors.black,
                             backgroundColor: Colors.grey,
                             circularStrokeCap: CircularStrokeCap.round,
-                            center: const Text('65%',
-                                style: TextStyle(fontSize: 8)),
+                            center: Text(voteAverage,
+                                style: const TextStyle(fontSize: 8)),
                           ),
                         )
                       ],
@@ -144,7 +147,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/images/ic_star.png',
+                                  Assets.images.icStar.path,
                                   width: 20,
                                   height: 20,
                                 ),
@@ -174,7 +177,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/images/ic_play.png',
+                                  Assets.images.icPlay.path,
                                   width: 20,
                                   height: 20,
                                 ),
