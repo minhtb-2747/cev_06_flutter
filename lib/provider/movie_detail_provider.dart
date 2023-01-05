@@ -4,8 +4,16 @@ import 'package:flutter/cupertino.dart';
 
 class MovieDetailProvider extends ChangeNotifier {
   final _movieService = MovieService();
-  MovieInfoResponse? _movieDetail;
-  MovieInfoResponse? get movieDetailInfo => _movieDetail;
+  MovieInfoResponse _movieDetail = const MovieInfoResponse(
+      overview: '',
+      poster_path: '',
+      id: 0,
+      original_title: '',
+      backdrop_path: '',
+      release_date: '',
+      genres: []);
+
+  MovieInfoResponse get movieDetailInfo => _movieDetail;
   bool isLoading = true;
 
   Future<void> getMovieDetail(int movieId) async {

@@ -52,8 +52,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: <TextSpan>[
                         TextSpan(
                             text: 'exion'.toUpperCase(),
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 32)),
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 32)),
                       ],
                     ),
                   ),
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: size.height * 0.02),
                 Container(
                   alignment: Alignment.center,
-                  child: TextField(
+                  child: const TextField(
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                         focusedBorder: UnderlineInputBorder(
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.only(bottom: 25),
+                    margin: const EdgeInsets.only(bottom: 25),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
@@ -129,9 +129,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           value: true,
                           onChanged: (value) {},
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: const Text(
+                        const Padding(
+                          padding: EdgeInsets.only(left: 5),
+                          child: Text(
                             'Remember password',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.white),
@@ -157,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: 25),
+                    margin: const EdgeInsets.only(top: 25),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -174,10 +174,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     )),
                 Container(
-                  margin: EdgeInsets.only(top: 25),
+                  margin: const EdgeInsets.only(top: 25),
                   child: Text(
                     'Forgot password'.toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                         decoration: TextDecoration.underline,
                         color: Colors.white),
                   ),
@@ -188,13 +188,13 @@ class _LoginScreenState extends State<LoginScreen> {
       bottomNavigationBar: Container(
         //https://stackoverflow.com/questions/54366982/transparent-bottom-navigation-bar-in-flutter
         color: const Color.fromRGBO(38, 38, 38, 0.2),
-        padding: EdgeInsets.only(top: 20, bottom: 20),
+        padding: const EdgeInsets.only(top: 20, bottom: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               'Done have account ? '.toUpperCase(),
-              style: TextStyle(color: Colors.deepOrange),
+              style: const TextStyle(color: Colors.deepOrange),
             ),
             TextButton(
               style: TextButton.styleFrom(

@@ -37,8 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: 130,
                       width: 130,
                       // color: Color.fromARGB(255, 15, 147, 59),
-                      opacity:
-                      const AlwaysStoppedAnimation<double>(0.5)),
+                      opacity: const AlwaysStoppedAnimation<double>(0.5)),
                 ),
                 Container(
                   child: RichText(
@@ -48,8 +47,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       children: <TextSpan>[
                         TextSpan(
                             text: 'exion'.toUpperCase(),
-                            style:
-                            TextStyle(color: Colors.white, fontSize: 32)),
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 32)),
                       ],
                     ),
                   ),
@@ -80,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               border: Border(
                                   right: BorderSide(color: Colors.deepOrange))),
                           child: Image.asset('assets/images/ic_fb.png',
@@ -88,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               width: 35,
                               // color: Color.fromARGB(255, 15, 147, 59),
                               opacity:
-                              const AlwaysStoppedAnimation<double>(0.5)),
+                                  const AlwaysStoppedAnimation<double>(0.5)),
                         ),
                         Container(
                           margin: const EdgeInsets.only(left: 15),
@@ -113,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               border: Border(
                                   right: BorderSide(color: Colors.deepOrange))),
                           child: Image.asset('assets/images/ic_tw.png',
@@ -121,7 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               height: 35,
                               // color: Colors.pink[800],
                               opacity:
-                              const AlwaysStoppedAnimation<double>(0.5)),
+                                  const AlwaysStoppedAnimation<double>(0.5)),
                         ),
                         Container(
                           margin: const EdgeInsets.only(left: 15),
@@ -144,17 +143,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Container(
                     padding: const EdgeInsets.all(20),
                     alignment: Alignment.center,
-                    child: const Text('SIGN UP', style: TextStyle(color: Colors.deepOrange, fontSize: 16, fontWeight: FontWeight.w500),),
+                    child: const Text(
+                      'SIGN UP',
+                      style: TextStyle(
+                          color: Colors.deepOrange,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ),
-
                 Container(
-                  margin: EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 20),
                   child: Text(
                     'ALREADY REGISTERED? SIGN IN'.toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                         decoration: TextDecoration.underline,
-                        color: Colors.white, fontWeight: FontWeight.w500),
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500),
                   ),
                 )
               ],
